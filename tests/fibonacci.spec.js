@@ -1,14 +1,5 @@
 import test from 'ava';
-import {fibSumMemoAsync, fibSumMemo, fibSumBelowEven} from '../solutions/002/fibonacci';
-
-// test('Fibonacci sequence', t => {
-//   t.is(fibSum(10), 143, 'Sum fib till 10');
-// });
-//
-// test('Fibonacci sequence async', async t => {
-//   t.is(await fibSumAsync(10), 143, 'Sum fib till 10');
-//   t.is(await fibSumAsync(50), 143, 'Sum fib50');
-// });
+import {fibSumMemoAsync, fibSumMemo, fibSumBelowEven} from '../solutions/002/';
 
 test('Fibonacci memoization', t => {
   t.is(fibSumMemo(10), 143, 'Sum fibonacci till 10');
@@ -21,6 +12,6 @@ test('Fibonacci async memoization', async t => {
 });
 
 test('Fibonacci sum below', t => {
-  t.is(fibSumBelowEven(4000000), 4613732);
+  t.is(fibSumBelowEven(4_000_000), 4_613_732);
 });
 

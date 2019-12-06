@@ -1,0 +1,3 @@
+const primeFactor = n => {
+    
+}
