@@ -38,9 +38,18 @@ const isPrime = n => {
  */
 const product = (n, j) => n*j;
 
+const pow = (n, exp) => n**exp;
+
+const sumPow = (end, exp = 2, start = 1) => Array(end + 1 - start).fill(0).map((x, i) => (i + start) ** exp).reduce((a,b) => a + b, 0);
+
+const squarePow = (end, exp = 2, start = 1) => pow(Array(end + 1 - start).fill(0).map((x, i) => (i + start)).reduce((a, b) => a + b, 0), exp);
+
 const arithmetics = () => {
   return {
-    product
+    product,
+    pow,
+    sumPow,
+    squarePow
   }
 }
 
