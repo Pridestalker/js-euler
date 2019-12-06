@@ -32,11 +32,21 @@ const isPrime = n => {
 }
 
 /**
+ * 
+ * @param {number|string} n
+ * @returns {Array} 
+ */
+const makeMatrix = n => {
+  n += '';
+  return n.split('').map(x => parseInt(x)).filter(x => !isNaN(x));
+}
+
+/**
  * @param {number} n first number
  * @param {number} j second number
  * @returns {number}
  */
-const product = (n, j) => n*j;
+const product = (...n) => n.reduce((a,b) => a*b, 0);
 
 const pow = (n, exp) => n**exp;
 
@@ -57,5 +67,6 @@ const arithmetics = () => {
 module.exports = { 
   fib, fibMemo, 
   isPrime, 
-  arithmetics
+  arithmetics,
+  makeMatrix
 }
