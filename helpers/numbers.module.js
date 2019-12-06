@@ -31,4 +31,22 @@ const isPrime = n => {
     return n >= 2;
 }
 
-module.exports = { fib, fibMemo, isPrime }
+/**
+ * @param {number} n first number
+ * @param {number} j second number
+ * @returns {number}
+ */
+const product = (n, j) => n*j;
+
+const arithmetics = () => {
+  return {
+    product
+  }
+}
+
+
+module.exports = { 
+  fib, fibMemo, 
+  isPrime, 
+  arithmetics
+}
