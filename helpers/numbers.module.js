@@ -36,23 +36,28 @@ const isPrime = n => {
  * @param {number|string} n
  * @returns {Array} 
  */
-const makeMatrix = n => {
-  n += '';
-  return n.split('').map(x => parseInt(x)).filter(x => !isNaN(x));
-}
+const makeMatrix = n => (n + '').split('').map(x => parseInt(x)).filter(x => !isNaN(x));
 
 /**
- * @param {number} n first number
- * @param {number} j second number
+ * @param {...number} n first number
  * @returns {number}
  */
-const product = (...n) => n.reduce((a,b) => a*b, 0);
+const product = (...n) => n.reduce((a,b) => a * b, 1);
 
 const pow = (n, exp) => n**exp;
 
-const sumPow = (end, exp = 2, start = 1) => Array(end + 1 - start).fill(0).map((x, i) => (i + start) ** exp).reduce((a,b) => a + b, 0);
+const sumPow = (end, exp = 2, start = 1) => Array(end + 1 - start).fill(0).map((x, i) => pow(i + start, exp)).reduce((a,b) => a + b, 0);
 
 const squarePow = (end, exp = 2, start = 1) => pow(Array(end + 1 - start).fill(0).map((x, i) => (i + start)).reduce((a, b) => a + b, 0), exp);
+
+/**
+ * 
+ * @param  {...number} arr 
+ */
+const gcd = (...arr) => {
+  const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  return [...arr].reduce((a, b) => _gcd(a, b));
+};
 
 const arithmetics = () => {
   return {
